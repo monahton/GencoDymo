@@ -1,0 +1,14 @@
+citEntry(entry="R package", 
+         title = "Data Extraction and Manipulation from the GENCODE Database",
+         author = personList(
+             as.person("Monah Abou Alezz"),
+             as.person("Lorenzo Salviati"),
+             as.person("Roberta Alfieri"),
+             as.person("Silvia Bione")),
+          year = "2020",
+          doi = "10.5281/zenodo.3605996",
+          url = "https://github.com/monahton/GencoDymo",
+          textVersion = paste("Monah Abou Alezz, Lorenzo Salviati, Roberta Alfieri and Silvia Bione (2020)",
+          "GencoDymo: Data Extraction and Manipulation from the GENCODE Database. R package version 0.2.1.",
+          "https://github.com/monahton/GencoDymo.",
+          "doi:10.5281/zenodo.3605996."))
