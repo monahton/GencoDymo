@@ -1,5 +1,7 @@
 # GencoDymo
 
+https://zenodo.org/badge/231610595.svg
+
 ## Data Extraction and Manipulation from the GENCODE Database
 
 ## Introduction
