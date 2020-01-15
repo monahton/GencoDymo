@@ -1,7 +1,5 @@
 # GencoDymo
 
-[![DOI](https://zenodo.org/badge/231610595.svg)](https://zenodo.org/badge/latestdoi/231610595)
-
 ## Data Extraction and Manipulation from the GENCODE Database
 
 ## Introduction
@@ -45,7 +43,7 @@ GencoDymo requires [dplyr](https://dplyr.tidyverse.org/) to be previously instal
 
 **Title**: Data Extraction and Manipulation from the GENCODE Database
 
-**Version**: 0.2.1
+**Version**: 0.3.1
 
 **Date**: 2020-01-02
 
