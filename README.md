@@ -27,6 +27,7 @@ After installation, the package can be loaded into R.
 ## Usage
 
 For details of how to use this package, please see the vignette.
+In case of problems in installing or using the package, open an issue or send an email to <monah.aboualezz@igm.cnr.it>
 
 ## Development
 
