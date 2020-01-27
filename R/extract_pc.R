@@ -9,14 +9,14 @@
 #' @examples
 #' examples \dontrun {
 #' # You don't have to run this
-#' load_gtf("gencode.v27.basic.annotation.gtf")
+#' df <- load_gtf("gencode.v27.basic.annotation.gtf")
+#' extract_pc(df)
 #’}
 extract_pc <- function(input) {
   # extracting pc annotations
   pc <- subset(input, input$gene_type=="protein_coding")
   # extracting genes, transcripts and exons
   pc_gte <- subset(pc, pc$type=="gene" | pc$type=="transcript" | pc$type=="exon")
-  # assigning a new dataframe
-  assign(deparse(substitute(pc_df)), pc_gte, envir = .GlobalEnv)
-
+  df <- as.data.frame(pc_gte)
+  return(df)
 }

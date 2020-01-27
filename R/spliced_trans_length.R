@@ -17,5 +17,6 @@ spliced_trans_length <- function(input) {
   exons <- subset(input, input$type=="exon")
   transcripts_id <- subset(exons, select = c("transcript_id", "width"))
   transcript_len <- data.table::setkey(data.table::setDT(transcripts_id), transcript_id)[, list(width=sum(width)), by=list(transcript_id)]
-  assign(deparse(substitute(SplicedTranscriptsLength)), transcript_len, envir = .GlobalEnv)
+  df <- as.data.frame(transcript_len)
+  return(df)
 }

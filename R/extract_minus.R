@@ -11,10 +11,10 @@
 #' @examples
 #' examples \dontrun {
 #' # You don't have to run this
-#' load_gtf("gencode.v27.lncRNAs.gtf")
-#' extract_minus(gtf_df, type = "gene")
-#' extract_minus(gtf_df, type = "transcript")
-#' extract_minus(gtf_df, type = "exon")
+#' df <- load_gtf("gencode.v27.lncRNAs.gtf")
+#' extract_minus(df, type = "gene")
+#' extract_minus(df, type = "transcript")
+#' extract_minus(df, type = "exon")
 #' extract_minus(introns_df, type = "intron")
 #’}
 extract_minus <- function(input, type) {
@@ -23,25 +23,29 @@ extract_minus <- function(input, type) {
     genes_minus <- subset(genes, genes$strand=="-")
     genes_num <- nrow(genes_minus)
     cat(paste0("\033[0;32mGenes: \033[0m", genes_num), sep = "\n")
-    assign(deparse(substitute(genes_minus_strand)), genes_minus, envir = .GlobalEnv)
+    df <- as.data.frame(genes_minus)
+    return(df)
   } else if (type=="transcript") {
     trans <- subset(input, input$type=="transcript")
     trans_minus <- subset(trans, trans$strand=="-")
     trans_num <- nrow(trans_minus)
     cat(paste0("\033[0;32mTranscripts: \033[0m", trans_num), sep = "\n")
-    assign(deparse(substitute(transcripts_minus_strand)), trans_minus, envir = .GlobalEnv)
+    df <- as.data.frame(trans_minus)
+    return(df)
   } else if (type=="exon") {
     exons <- subset(input, input$type=="exon")
     exons_minus <- subset(exons, exons$strand=="-")
     exons_num <- nrow(exons_minus)
     cat(paste0("\033[0;32mExons: \033[0m", exons_num), sep = "\n")
-    assign(deparse(substitute(exons_minus_strand)), exons_minus, envir = .GlobalEnv)
+    df <- as.data.frame(exons_minus)
+    return(df)
   } else if (type=="intron") {
     introns <- subset(input, input$type=="intron")
     introns_minus <- subset(introns, introns$strand=="-")
     introns_num <- nrow(introns_minus)
     cat(paste0("\033[0;32mIntrons: \033[0m", introns_num), sep = "\n")
-    assign(deparse(substitute(introns_minus_strand)), introns_minus, envir = .GlobalEnv)
+    df <- as.data.frame(introns_minus)
+    return(df)
   } else {
     print("Error: operation could not be performed - check the help page for examples")
   }

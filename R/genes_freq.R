@@ -9,8 +9,8 @@
 #' @examples
 #' examples \dontrun {
 #' # You don't have to run this
-#' load_gtf("gencode.v27.lncRNAs.gtf")
-#' genes_freq(gencode.v27.lncRNAs.gtf)
+#' df <- load_gtf("gencode.v27.lncRNAs.gtf")
+#' genes_freq(df)
 #’}
 genes_freq<- function(input) {
   # extracting transcripts
@@ -23,5 +23,6 @@ genes_freq<- function(input) {
   colnames(gene_ids3) <- c("num_of_transcripts", "genes_freq")
   gene_ids3$percentage <- round(gene_ids3$genes_freq / sum(gene_ids3$genes_freq) * 100, digits = 3)
   # assigning new dataframe
-  assign(deparse(substitute(genes_freq_df)), gene_ids3, envir = .GlobalEnv)
+  df <- as.data.frame(gene_ids3)
+  return(df)
 }

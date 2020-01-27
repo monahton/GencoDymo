@@ -8,8 +8,8 @@
 #' @examples
 #' examples \dontrun {
 #' # You don't have to run this
-#' load_gtf("gencode.v27.lncRNAs.gtf")
-#' extract_introns(gencode.v27.lncRNAs.gtf)
+#' df <- load_gtf("gencode.v27.lncRNAs.gtf")
+#' introns <- extract_introns(df)
 #’}
 extract_introns <- function(input) {
   exons1 <- subset(input, input$type=="exon")
@@ -74,9 +74,9 @@ extract_introns <- function(input) {
   introns_total <- introns7 %>% dplyr::group_by(gene_id) %>% dplyr::arrange(seqnames, intron_start)
   introns_total_number <- nrow(introns_total)
   cat(paste0("Total introns: ", introns_total_number), sep = "\n")
-  ## assigning introns dataframe
-  assign(deparse(substitute(introns_df)), introns_total, envir = .GlobalEnv)
   rm(classified_exons_df, envir = .GlobalEnv)
+  df <- as.data.frame(introns_total)
+  return(df)
 }
 
 

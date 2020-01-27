@@ -10,8 +10,8 @@
 #' @examples
 #' examples \dontrun {
 #' # You don't have to run this
-#' load_gtf("gencode.v27.lncRNAs.gtf")
-#' classify_exons(gtf_df)
+#' df <- load_gtf("gencode.v27.lncRNAs.gtf")
+#' classify_exons(df)
 #’}
 classify_exons <- function(input) {
   gtf <- input
@@ -59,5 +59,6 @@ classify_exons <- function(input) {
   cat(paste0("Total exons: ", total_exons2), sep = "\n")
   total_exons3 <- suppressWarnings(dplyr::left_join(gtf,total_exons1, by = c("seqnames", "start", "end", "width", "strand", "source", "type", "score", "phase", "gene_id", "gene_type", "gene_name", "level", "tag", "havana_gene", "transcript_id", "transcript_type", "transcript_name", "transcript_support_level", "havana_transcript", "exon_number", "exon_id")))
   # assigning new dataframe
-  assign(deparse(substitute(classified_exons_df)), total_exons3, envir = .GlobalEnv)
+  df <- as.data.frame(total_exons3)
+  return(df)
 }

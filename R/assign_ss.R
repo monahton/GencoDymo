@@ -10,7 +10,7 @@
 #' @examples
 #' examples \dontrun {
 #' # You don't have to run this
-#' assign_ss(introns_df, genome=BSgenome.Hsapiens.UCSC.hg38)
+#' intr_splice_sites <- assign_ss(introns_df, genome=BSgenome.Hsapiens.UCSC.hg38)
 #’}
 assign_ss <- function(input, genome=BSgenome.Hsapiens.UCSC.hg38) {
   # Preparing donor splice sites data
@@ -49,6 +49,6 @@ assign_ss <- function(input, genome=BSgenome.Hsapiens.UCSC.hg38) {
   intron_merge1 <- dplyr::left_join(donor_ss2,acceptor_ss3, by = c("transcript_id", "intron_number"))
   intron_merge2 <- subset(intron_merge1, select=c("transcript_id", "intron_number","donor_ss", "acceptor_ss"))
   intron_ss_final <- dplyr::left_join(input,intron_merge2, by = c("transcript_id", "intron_number"))
-  # assigning new dataframe
-  assign(deparse(substitute(introns_ss)), intron_ss_final, envir = .GlobalEnv)
+  df <- as.data.frame(intron_ss_final)
+  return(df)
 }

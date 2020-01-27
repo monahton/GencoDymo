@@ -20,6 +20,6 @@ eliminate_redundant_introns <- function(input) {
   # eliminating redundant introns
   nonredundant <- uniqueid[!duplicated(data.table::rleidv(uniqueid, cols = c("id", "gene_id"))), ]
   nonredundant$id <- NULL
-  # assignimg new dtaframe
-  assign(deparse(substitute(nonredundant_introns)), nonredundant, envir = .GlobalEnv)
+  df <- as.data.frame(nonredundant)
+  return(df)
 }

@@ -1,8 +1,8 @@
 Package: GencoDymo
 Type: Package
 Title: Data Extraction and Manipulation from the GENCODE Database
-Version: 0.3.1
-Date: 2020-01-02
+Version: 0.4.1
+Date: 2020-01-27
 Authors@R: c(
     person("Monah", "Abou Alezz", email = "monah.aboualezz@igm.cnr.it", role = c("aut", "cre", "cph")),
     person("Lorenzo", "Salviati", email = "lorenzo.salviati01@universitadipavia.it", role = "aut"),

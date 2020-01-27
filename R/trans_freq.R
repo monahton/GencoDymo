@@ -9,8 +9,8 @@
 #' @examples
 #' examples \dontrun {
 #' # You don't have to run this
-#' load_gtf("gencode.v27.lncRNAs.gtf")
-#' genes_freq(gencode.v27.lncRNAs.gtf)
+#' df <- load_gtf("gencode.v27.lncRNAs.gtf")
+#' trans_freq(df)
 #’}
 trans_freq<- function(input) {
   # extracting exons
@@ -22,6 +22,6 @@ trans_freq<- function(input) {
   colnames(trans_id3) <- c("num_of_exons", "trans_freq")
   # calculating percentage
   trans_id3$percentage <- round(trans_id3$trans_freq / sum(trans_id3$trans_freq) * 100, digits = 3)
-  # assigning new dataframe
-  assign(deparse(substitute(trans_freq_df)), trans_id3, envir = .GlobalEnv)
+  df <- as.data.frame(trans_id3)
+  return(df)
 }

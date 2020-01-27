@@ -12,8 +12,8 @@
 #' @examples
 #' examples \dontrun {
 #' # You don't have to run this
-#' load_gtf("gencode.v27.lncRNAs.gtf")
-#' stat_exon(gtf_df)
+#' df <- load_gtf("gencode.v27.lncRNAs.gtf")
+#' stat_exon(df)
 #’}
 stat_exon <- function(input) {
   ## classify exons
@@ -27,6 +27,6 @@ stat_exon <- function(input) {
   N <- as.data.frame(table(grouped_exons$EXON_CLASSIFICATION))
   colnames(N) <- c("EXON_CLASSIFICATION", "N")
   final <- suppressWarnings(left_join(N,summarised_df, by = "EXON_CLASSIFICATION"))
-  # assigning new dataframe
-  assign(deparse(substitute(exon_stat_df)), final, envir = .GlobalEnv)
+  df <- as.data.frame(final)
+  return(df)
 }

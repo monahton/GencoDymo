@@ -20,6 +20,6 @@ eliminate_redundant_exons <- function(input) {
   # eliminating redundant exons
   nonredundant <- uniqueid[!duplicated(data.table::rleidv(uniqueid, cols = c("id", "gene_id"))), ]
   nonredundant$id <- NULL
-  # assigning a new dataframe
-  assign(deparse(substitute(nonredundant_exons)), nonredundant, envir = .GlobalEnv)
+  df <- as.data.frame(nonredundant)
+  return(df)
 }

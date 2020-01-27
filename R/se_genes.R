@@ -10,8 +10,8 @@
 #' @examples
 #' examples \dontrun {
 #' # You don't have to run this
-#' load_gtf("gencode.v27.lncRNAs.gtf")
-#' se_genes(gtf_df)
+#' df <- load_gtf("gencode.v27.lncRNAs.gtf")
+#' se_genes(df)
 #’}
 se_genes <- function(input) {
   exons <- subset(input, input$type=="exon")
@@ -20,5 +20,6 @@ se_genes <- function(input) {
   colnames(gene_ids2) <- c("gene_id", "exon_count")
   se <- subset(gene_ids2, gene_ids2$exon_count == 1)
   se_genes_id <- subset(se, select = "gene_id")
-  assign(deparse(substitute(single_exon_genes)), se_genes_id, envir = .GlobalEnv)
+  df <- as.data.frame(se_genes_id)
+  return(df)
 }

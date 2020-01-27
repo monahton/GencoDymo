@@ -59,7 +59,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ---
 
-Gene annotations for the human genome has been made available by several databases integrating data from systematic explorations of different computational and experimental resources. The **GENCODE** project [1], part of the ENCODE project [2], offers accurate annotations of the human and mouse genomes from the literature, primary data repositories, computational predictions, manual annotation, and experimental validation of genes and transcripts including the noncoding transcripts which are continously discovered and annotated. GENCODE is by large one of the most comprehensive and standardized database for gene annotations that is widely used by the community.\
+Gene annotations for the human genome has been made available by several databases integrating data from systematic explorations of different experimental and computational resources. The **GENCODE** project [1], part of the ENCODE project [2], offers accurate annotations of the human and mouse genomes from the literature, primary data repositories, computational predictions, manual annotation, and experimental validation of genes and transcripts including the noncoding transcripts which are continously discovered and annotated. GENCODE is by large one of the most comprehensive and standardized database for gene annotations that is widely used by the community.\
 The gene sets provided by GENCODE are comprehensive and include _protein-coding_ and _non-coding_ loci including _alternatively spliced isoforms_ and _pseudogenes_. GENCODE gene annotations are constantly updated and regularly released as the Ensembl/GENCODE gene sets which are accessible via the official website (https://www.gencodegenes.org). GENCODE gene sets are released on average four times a year for mouse and two times a year for human [1].\
 **GencoDymo** is an R package that interrogates different releases of GENCODE annotations from the human and the mouse genomes. GencoDymo extracts and manipulates GENCODE annotations and provides easily-accessible data regarding annotations statistics, releases comparison, in addition to introns and splice sites data. Moreover, GencoDymo can produce fasta files of donor and acceptor splice sites motifs that can be directly uploaded to the **MaxEntScan** tool [3] for the calculation of splice sites scores.
 
@@ -153,8 +153,7 @@ The <span style="color:coral">`extract_pc()`</span> function subset the basic an
 
 ```{r eval=FALSE}
   # Extract protein-coding genes from basic annotation file
-    extract_pc(gen32)
-    View(pc_df)
+    pc_df <- extract_pc(gen32)
 ```
 
 ***
@@ -206,7 +205,7 @@ The <span style="color:coral">`assign_ss()`</span> function adds two new columns
 The first argument of the function is a dataframe containing intronic coordinates and a second argument should specify the genome sequence of the studied species (the human genome sequence hg38 is used by default). 
 
 ```{r eval=FALSE}
-assign_ss(gen32_lncRNA_introns, genome = hg38)
+intr_splice_sites <- assign_ss(gen32_lncRNA_introns, genome = hg38)
 ```
 
 <br>
@@ -222,7 +221,7 @@ The **MaxEntScan::score3ss** assign scores for donor splice sites according to t
 <br>
 
 The <span style="color:coral">`extract_5ss_motif()`</span> and <span style="color:coral">`extract_3ss_motif()`</span> functions are used along with BSgenome objects of the studied species to retrieve _MaxEntScan::score5ss_ and _MaxEntScan::score3ss_ motif sequences respectively. \
-The functions generate a fasta file in the working directory as an output, that contains either 9-mers or 23-mers, respectively for each 5' and 3' splice-sites, and a dataframe for the coordinates and IDs of the corresponding motifs. \
+The functions generate a **fasta file** in the working directory as an output, that contains either 9-mers or 23-mers, respectively for each 5' and 3' splice-sites, and a **dataframe** for the coordinates and IDs of the corresponding motifs. \
 The generated fasta files can then be directly utilized by _MaxEntScan_ tools.
 
 <br>

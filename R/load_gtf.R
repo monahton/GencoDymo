@@ -18,6 +18,5 @@ load_gtf <- function(input) {
   gtf <- rtracklayer::import(input)
   # saving as dataframe
   df <- as.data.frame(gtf)
-  # assigning new dataframe
-  assign(deparse(substitute(gtf_df)), df, envir = .GlobalEnv)
+  return(df)
 }
