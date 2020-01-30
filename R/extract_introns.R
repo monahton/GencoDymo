@@ -74,7 +74,6 @@ extract_introns <- function(input) {
   introns_total <- introns7 %>% dplyr::group_by(gene_id) %>% dplyr::arrange(seqnames, intron_start)
   introns_total_number <- nrow(introns_total)
   cat(paste0("Total introns: ", introns_total_number), sep = "\n")
-  rm(classified_exons_df, envir = .GlobalEnv)
   df <- as.data.frame(introns_total)
   return(df)
 }

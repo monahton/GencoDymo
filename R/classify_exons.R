@@ -57,7 +57,7 @@ classify_exons <- function(input) {
   total_exons1 <- rbind(single_exons2,first_exons2,last_exons4,inner_exons)
   total_exons2 <- nrow(total_exons1)
   cat(paste0("Total exons: ", total_exons2), sep = "\n")
-  total_exons3 <- suppressWarnings(dplyr::left_join(gtf,total_exons1, by = c("seqnames", "start", "end", "width", "strand", "source", "type", "score", "phase", "gene_id", "gene_type", "gene_name", "level", "tag", "havana_gene", "transcript_id", "transcript_type", "transcript_name", "transcript_support_level", "havana_transcript", "exon_number", "exon_id")))
+  total_exons3 <- suppressWarnings(dplyr::left_join(gtf,total_exons1, by = c("seqnames", "start", "end", "width", "strand", "source", "type", "score", "phase", "gene_id", "gene_type", "gene_name","level","hgnc_id", "tag", "havana_gene", "transcript_id", "transcript_type", "transcript_name", "transcript_support_level", "havana_transcript", "exon_number", "ont","exon_id")))
   # assigning new dataframe
   df <- as.data.frame(total_exons3)
   return(df)
