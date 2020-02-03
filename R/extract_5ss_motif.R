@@ -7,6 +7,7 @@
 #' @export
 #' @importFrom tidyr unite
 #' @importFrom seqRFLP dataframe2fas
+#' @importFrom BSgenome getSeq
 #' @keywords donor ss maxentscan
 #' @seealso \code{\link{extract_3ss_motif}}
 #' @return A dataframe with motif coordinates and their sequences
@@ -28,7 +29,7 @@ extract_5ss_motif <- function(input, genome = BSgenome.Hsapiens.UCSC.hg38) {
   df <- rbind(df_plus,df_minus)
   # extracting sequences
   cat(paste("\033[0;32mPreparing donor splice sites motif sequences ... \033[0m"), sep = "\n")
-  motifs <- as.data.frame(getSeq(genome, df$seqnames, start=df$motif_start, end=df$motif_end, strand=df$strand))
+  motifs <- as.data.frame(BSgenome::getSeq(genome, df$seqnames, start=df$motif_start, end=df$motif_end, strand=df$strand))
   colnames(motifs)[1] <- "donor_ss_motif"
   df2 <- cbind(df,motifs)
   # assigning sequences id
@@ -41,5 +42,7 @@ extract_5ss_motif <- function(input, genome = BSgenome.Hsapiens.UCSC.hg38) {
   fasta <- seqRFLP::dataframe2fas(id2, file = "5ss_motif_fasta.fa")
   cat(paste("Done"), sep = "\n")
   # assigning new dataframe
-  assign(deparse(substitute(donor_motif_df)), df2, envir = .GlobalEnv)
+  pos <- 1
+  envir = as.environment(pos)
+  assign(deparse(substitute(donor_motif_df)), df2, envir = envir)
 }

@@ -15,6 +15,7 @@ output:
     theme: cerulean
 vignette: >
   %\VignetteIndexEntry{GencoDymo}
+  %\VignetteDepends(devtools)
   %\VignetteEngine{knitr::knitr}
   \usepackage[utf8]{inputenc}
 

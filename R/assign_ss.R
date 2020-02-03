@@ -6,6 +6,7 @@
 #' @param genome The full genome sequence of a particular species. The default value is the human genome sequence of the hg38 assembly
 #' @export
 #' @import dplyr
+#' @importFrom BSgenome getSeq
 #' @return A dataframe with additional 2 columns for donor and acceptor splice sites consensus
 #' @examples
 #' examples \dontrun {
@@ -26,7 +27,7 @@ assign_ss <- function(input, genome=BSgenome.Hsapiens.UCSC.hg38) {
   intron_total1 <- rbind(ip1,im1)
   # Extracting donor splice sites sequences
   cat(paste("\033[0;32mExtracting donor splice sites sequences ... please be patient as this might take several minutes ... \033[0m"), sep = "\n")
-  donor_ss1 <- as.data.frame(getSeq(genome, intron_total1$seqnames, start=intron_total1$start_5ss, end=intron_total1$end_5ss, strand=intron_total1$strand))
+  donor_ss1 <- as.data.frame(BSgenome::getSeq(genome, intron_total1$seqnames, start=intron_total1$start_5ss, end=intron_total1$end_5ss, strand=intron_total1$strand))
   donor_ss2 <- cbind(intron_total1,donor_ss1)
   colnames(donor_ss2)[7] <- "donor_ss"
   # Preparing donor splice sites data
@@ -40,7 +41,7 @@ assign_ss <- function(input, genome=BSgenome.Hsapiens.UCSC.hg38) {
   intron_total2 <- rbind(ip2,im2)
   # Extracting donor splice sites sequences
   cat(paste("\033[0;32mExtracting acceptor splice sites sequences ... please be patient as this might take several minutes ... \033[0m"), sep = "\n")
-  acceptor_ss1 <- as.data.frame(getSeq(genome, intron_total2$seqnames, start=intron_total2$start_3ss, end=intron_total2$end_3ss, strand=intron_total2$strand))
+  acceptor_ss1 <- as.data.frame(BSgenome::getSeq(genome, intron_total2$seqnames, start=intron_total2$start_3ss, end=intron_total2$end_3ss, strand=intron_total2$strand))
   acceptor_ss2 <- cbind(intron_total2,acceptor_ss1)
   colnames(acceptor_ss2)[7] <- "acceptor_ss"
   # Preparing introns splice sites dataframe

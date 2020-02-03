@@ -11,18 +11,20 @@ Authors@R: c(
 Maintainer: Monah Abou Alezz <monah.aboualezz@igm.cnr.it>
 Description: This package is for the analysis of GENCODE annotations data from the human and mouse genome.
     The package allows the user to analyse and extract different types of data based on the annotations published in the different verions of GENCODE database and the comparison of data from these releases.
-License: GPL-2
+License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
     data.table (>= 1.11.6),
     rtracklayer (>= 1.44.4),
+    BSgenome (>= 1.52.0),
     BSgenome.Hsapiens.UCSC.hg38 (>= 1.4.1),
     plotrix (>= 3.7-6),
     tidyr (>= 1.0.0),
-    seqRFLP (>= 1.0.1)
+    seqRFLP (>= 1.0.1),
+    utils (>= 2.9.2)
 Depends: dplyr (>= 0.8.3)
-Suggests: knitr, rmarkdown
+Suggests: knitr, rmarkdown, devtools
 URL: https://github.com/monahton/GencoDymo
 BugReports: https://github.com/monahton/GencoDymo/issues
 RoxygenNote: 7.0.2
