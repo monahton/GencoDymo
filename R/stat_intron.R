@@ -66,7 +66,7 @@ stat_intron <- function(input) {
   stat$group <- factor(as.character(stat$group), levels = c("first_intron", "inner_intron", "gc_intron", "gt_intron", "at_intron","gc_first_intron", "gt_first_intron","at_first_intron", "gc_inner_intron", "gt_inner_intron", "at_inner_intron"))
   final1 <- stat[order(stat$group), ]
   # assigning number of elements
-  N <- c(nrow(first_introns), nrow(inner_introns), nrow(gc), nrow(gt), nrow(gc_fi), nrow(gt_fi), nrow(gc_ii), nrow(gt_ii), nrow(at), nrow(at_fi), nrow(at_ii))
+  N <- c(nrow(first_introns), nrow(inner_introns), nrow(gc), nrow(gt),nrow(at), nrow(gc_fi), nrow(gt_fi), nrow(at_fi), nrow(gc_ii), nrow(gt_ii), nrow(at_ii))
   final2 <- cbind(final1, N)
   final3 <- final2[,c(1,6,2,3,4,5)]
   df <- as.data.frame(final3)
