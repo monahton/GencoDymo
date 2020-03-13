@@ -16,7 +16,7 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     data.table (>= 1.11.6),
-    rtracklayer (>= 1.44.4),
+    rtracklayer (>= 1.38.3),
     BSgenome (>= 1.52.0),
     BSgenome.Hsapiens.UCSC.hg38 (>= 1.4.1),
     plotrix (>= 3.7-6),
