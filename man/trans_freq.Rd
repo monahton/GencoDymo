@@ -10,10 +10,14 @@ trans_freq(input)
 \item{input}{The name of the downloaded  gtf file from GENCODE website}
 }
 \value{
-A dataframe of number of transcripts and their percentage
+A data frame of number of transcripts and their percentage
 }
 \description{
-This function takes a gtf file of GENCODE annotations as input. It calculates the number of different exons of a transcript. Then, the output is a dataframe containing the number of transcripts having 1,2,3... or several exons and their percentage.
+This function takes a gtf file of GENCODE annotations as input. It calculates the number of different exons of a transcript. Then, the output is a data frame containing the number of transcripts having 1,2,3... or several exons and their percentage.
+}
+\examples{
+df <- load_gtf("gencode.v27.lncRNAs.gtf")
+trans_freq(df)
 }
 \seealso{
 \code{\link{genes_freq}}

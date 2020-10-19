@@ -10,10 +10,14 @@ se_transcripts(input)
 \item{input}{The name of the downloaded gtf file from GENCODE website}
 }
 \value{
-A dataframe of the transcript ids of single-exon transcripts
+A data frame of the transcript ids of single-exon transcripts
 }
 \description{
-This function takes a gtf file from GENCODE and returns a dataframe in the R Global Environment containing a column of the transcripts id of the single-exon transcripts.
+This function takes a gtf file from GENCODE and returns a data frame in the R Global Environment containing a column of the transcripts id of the single-exon transcripts.
+}
+\examples{
+df <- load_gtf("gencode.v27.lncRNAs.gtf")
+se_transcripts(df)
 }
 \seealso{
 \code{\link{se_genes}}

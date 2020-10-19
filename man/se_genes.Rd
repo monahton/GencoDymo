@@ -13,7 +13,11 @@ se_genes(input)
 A dataframe of the gene IDs of single-exon transcripts
 }
 \description{
-This function takes a gtf file from GENCODE and returns a dataframe in the R Global Environment containing a column of the gene id of the single-exon genes.
+This function takes a gtf file from GENCODE and returns a data frame in the R Global Environment containing a column of the gene id of the single-exon genes.
+}
+\examples{
+df <- load_gtf("gencode.v27.lncRNAs.gtf")
+se_genes(df)
 }
 \seealso{
 \code{\link{se_transcripts}}

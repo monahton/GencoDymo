@@ -7,13 +7,17 @@
 stat_exon(input)
 }
 \arguments{
-\item{input}{The name of the dataframe containing exon annotations from GENCODE and the ordinal position of each exon}
+\item{input}{The name of the data frame containing exon annotations from GENCODE and the ordinal position of each exon}
 }
 \value{
-A dataframe of exons width summary statistics
+A data frame of exons width summary statistics
 }
 \description{
-This function takes a dataframe of GENCODE annotations as input. It calculates the summary statistics of exons length taking into consideration their ordinal position. It returns a dataframe containing the summarised exons length data data.
+This function takes a data frame of GENCODE annotations as input. It calculates the summary statistics of exons length taking into consideration their ordinal position. It returns a data frame containing the summarized exons length data data.
+}
+\examples{
+df <- load_gtf("gencode.v27.lncRNAs.gtf")
+stat_exon(df)
 }
 \seealso{
 \code{\link{stat_intron}}

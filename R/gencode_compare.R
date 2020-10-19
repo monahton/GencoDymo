@@ -1,24 +1,22 @@
 #' @title Compare number of annotations between 2 different releases from GENCODE
 #'
-#' @description This function compares the number of annotated genes, transcripts, exons or introns from 2 dataframes. It is used to comapre the different annotations between different releases from GENCODE
+#' @description This function compares the number of annotated genes, transcripts, exons or introns from 2 data frames. It is used to compare the different annotations between different releases from GENCODE
 #' @usage gencode_compare(df1, df2, type)
-#' @param df1 The name of the first dataframe of a particular release from GENCODE
-#' @param df2 The name of the second dataframe of a particular release from GENCODE
+#' @param df1 The name of the first data frame of a particular release from GENCODE
+#' @param df2 The name of the second data frame of a particular release from GENCODE
 #' @param type A string specifying the genetic element to be compared
 #' @export
 #' @keywords gencode releases
 #' @return Delta: The difference between annotated numbers of a particular genetic element.
 #' Percentage: the percentage of delta
 #' @examples
-#' examples \dontrun {
-#' # You don't have to run this
 #' data1 <- load_gtf("gencode.v27.lncRNAs.gtf")
 #' data2 <- load_gtf("gencode.v28.lncRNAs.gtf")
 #' gencode_compare(data1, data2, type = "gene")
 #' gencode_compare(data1, data2, type = "transcript")
 #' gencode_compare(data1, data2, type = "exon")
 #' gencode_compare(data1, data2, type = "intron")
-#’}
+
 gencode_compare <- function(df1, df2, type) {
   if(type=="gene") {
     genes1 <- subset(df1, df1$type=="gene")

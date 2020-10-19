@@ -7,9 +7,9 @@
 gencode_compare(df1, df2, type)
 }
 \arguments{
-\item{df1}{The name of the first dataframe of a particular release from GENCODE}
+\item{df1}{The name of the first data frame of a particular release from GENCODE}
 
-\item{df2}{The name of the second dataframe of a particular release from GENCODE}
+\item{df2}{The name of the second data frame of a particular release from GENCODE}
 
 \item{type}{A string specifying the genetic element to be compared}
 }
@@ -18,7 +18,15 @@ Delta: The difference between annotated numbers of a particular genetic element.
 Percentage: the percentage of delta
 }
 \description{
-This function compares the number of annotated genes, transcripts, exons or introns from 2 dataframes. It is used to comapre the different annotations between different releases from GENCODE
+This function compares the number of annotated genes, transcripts, exons or introns from 2 data frames. It is used to compare the different annotations between different releases from GENCODE
+}
+\examples{
+data1 <- load_gtf("gencode.v27.lncRNAs.gtf")
+data2 <- load_gtf("gencode.v28.lncRNAs.gtf")
+gencode_compare(data1, data2, type = "gene")
+gencode_compare(data1, data2, type = "transcript")
+gencode_compare(data1, data2, type = "exon")
+gencode_compare(data1, data2, type = "intron")
 }
 \keyword{gencode}
 \keyword{releases}

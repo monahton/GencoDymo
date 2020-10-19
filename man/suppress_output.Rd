@@ -2,7 +2,7 @@
 % Please edit documentation in R/suppress_output.R
 \name{suppress_output}
 \alias{suppress_output}
-\title{Supress the output message of R commands}
+\title{Suppress the output message of R commands}
 \usage{
 suppress_output(input)
 }
@@ -14,4 +14,7 @@ The output from a command without displaying any message
 }
 \description{
 This function suppresses all output messages from an R command
+}
+\examples{
+suppress_output(stat_intron(intron_df))
 }

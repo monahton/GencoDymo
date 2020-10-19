@@ -7,12 +7,16 @@
 extract_pc(input)
 }
 \arguments{
-\item{input}{The name of the downloaded basic annoation gtf file from GENCODE website}
+\item{input}{The name of the downloaded basic annotation gtf file from GENCODE website}
 }
 \value{
-A dataframe of protein-coding genes
+A data frame of protein-coding genes
 }
 \description{
-This function takes a dataframe of basic annotations provided by GENCODE as input. The function extracts from the dataframe all the protein-coding genes and gives as an output a dataframe in the R Global Environment. The output dataframe includes the gene, transcript and exon annotations only.
+This function takes a data frame of basic annotations provided by GENCODE as input. The function extracts from the data frame all the protein-coding genes and gives as an output a data frame in the R Global Environment. The output data frame includes the gene, transcript and exon annotations only.
+}
+\examples{
+df <- load_gtf("gencode.v27.basic.annotation.gtf")
+extract_pc(df)
 }
 \keyword{protein-coding}

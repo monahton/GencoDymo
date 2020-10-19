@@ -7,13 +7,16 @@
 stat_intron(input)
 }
 \arguments{
-\item{input}{The name of the dataframe containing introns coordinates and the splice sites of each intron}
+\item{input}{The name of the data frame containing introns coordinates and the splice sites of each intron}
 }
 \value{
-A dataframe of introns width summary statistics
+A data frame of introns width summary statistics
 }
 \description{
-This function takes a dataframe of introns as input. It calculates the summary statistics of introns length taking into consideration their ordinal position and splice sites. The function returns a dataframe containing the summarised data.
+This function takes a data frame of introns as input. It calculates the summary statistics of introns length taking into consideration their ordinal position and splice sites. The function returns a data frame containing the summarized data.
+}
+\examples{
+stat_intron(intron_df)
 }
 \seealso{
 \code{\link{stat_exon}}

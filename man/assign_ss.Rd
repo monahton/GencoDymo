@@ -7,13 +7,16 @@
 assign_ss(input,genome)
 }
 \arguments{
-\item{input}{The name of the dataframe containing intron coordinates}
+\item{input}{The name of the data frame containing intron coordinates}
 
 \item{genome}{The full genome sequence of a particular species. The default value is the human genome sequence of the hg38 assembly}
 }
 \value{
-A dataframe with additional 2 columns for donor and acceptor splice sites consensus
+A data frame with additional 2 columns for donor and acceptor splice sites consensus
 }
 \description{
-This function takes a dataframe of intron coordinates and the full genome sequence of a particular species and return a dataframe with additional 2 columns for indicating the donor and acceptor splice sites for each intron.
+This function takes a data frame of intron coordinates and the full genome sequence of a particular species and return a data frame with additional 2 columns for indicating the donor and acceptor splice sites for each intron.
+}
+\examples{
+intr_splice_sites <- assign_ss(introns_df, genome=BSgenome.Hsapiens.UCSC.hg38)
 }

@@ -10,10 +10,14 @@ spliced_trans_length(input)
 \item{input}{The name of the downloaded  gtf file from GENCODE website}
 }
 \value{
-A dataframe of the transcript ids and their length when spliced
+A data frame of the transcript ids and their length when spliced
 }
 \description{
-This function takes a dataframe of GENCODE annotations as input. It calculates the length of the transcripts considering only the length of their corresponding exons.
+This function takes a data frame of GENCODE annotations as input. It calculates the length of the transcripts considering only the length of their corresponding exons.
+}
+\examples{
+load_gtf("gencode.v27.lncRNAs.gtf")
+spliced_trans_length(gtf_df)
 }
 \keyword{mature}
 \keyword{transcript}

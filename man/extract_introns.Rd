@@ -2,7 +2,7 @@
 % Please edit documentation in R/extract_introns.R
 \name{extract_introns}
 \alias{extract_introns}
-\title{Extract introns coordinates from a GENCODE gtf file as a dataframe.}
+\title{Extract introns coordinates from a GENCODE gtf file as a data frame.}
 \usage{
 extract_introns(input)
 }
@@ -10,8 +10,12 @@ extract_introns(input)
 \item{input}{The name of a gtf file from GENCODE}
 }
 \value{
-A dataframe of intron coordinates
+A data frame of intron coordinates
 }
 \description{
-This function takes a gtf file from GENCODE and returns a dataframe in the R Global Environment containing introns coordinates and their position in the transcript.
+This function takes a gtf file from GENCODE and returns a data frame in the R Global Environment containing introns coordinates and their position in the transcript.
+}
+\examples{
+df <- load_gtf("gencode.v27.lncRNAs.gtf")
+introns <- extract_introns(df)
 }

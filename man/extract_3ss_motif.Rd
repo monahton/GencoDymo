@@ -7,15 +7,18 @@
 extract_3ss_motif(input,genome)
 }
 \arguments{
-\item{input}{The name of the dataframe containing intron coordinates}
+\item{input}{The name of the data frame containing intron coordinates}
 
 \item{genome}{The full genome sequence of a particular species. The default value is the human genome sequence of the hg38 assembly}
 }
 \value{
-A dataframe with motif coordinates and their sequences
+A data frame with motif coordinates and their sequences
 }
 \description{
-This function takes a dataframe of intron coordinates and the full genome sequence of a particular species and return a "bed-file" structured dataframe containing the motif coordinates, their corresponding transcripts id and intron number and the motif sequence which are also saved as a fasta file in the working directory. The fasta file can be uploaded to MaxEntScan::3ss web tool for the retrieval of the scores of acceptor splice sites.
+This function takes a data frame of intron coordinates and the full genome sequence of a particular species and return a "bed-file" structured data frame containing the motif coordinates, their corresponding transcripts id and intron number and the motif sequence which are also saved as a fasta file in the working directory. The fasta file can be uploaded to MaxEntScan::3ss web tool for the retrieval of the scores of acceptor splice sites.
+}
+\examples{
+extract_3ss_motif(introns_df, genome=BSgenome.Hsapiens.UCSC.hg38)
 }
 \seealso{
 \code{\link{extract_5ss_motif}}

@@ -10,10 +10,14 @@ classify_exons(input)
 \item{input}{The name of the downloaded gtf file from GENCODE website}
 }
 \value{
-A dataframe with additional column describing exon positions within a trnscript
+A data frame with additional column describing exon positions within a transcript
 }
 \description{
-This function takes a gtf file from GENCODE and returns a dataframe in the R Global Environment containing an additional columnn which states the exons position within a transcript; whether they are a single exon, first, inner or last exons.
+This function takes a gtf file from GENCODE and returns a data frame in the R Global Environment containing an additional column which states the exons position within a transcript; whether they are a single exon, first, inner or last exons.
+}
+\examples{
+df <- load_gtf("gencode.v27.lncRNAs.gtf")
+classify_exons(df)
 }
 \keyword{first}
 \keyword{inner}

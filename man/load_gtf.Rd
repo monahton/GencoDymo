@@ -2,7 +2,7 @@
 % Please edit documentation in R/load_gtf.R
 \name{load_gtf}
 \alias{load_gtf}
-\title{Load a gtf file from GENCODE as a dataframe.}
+\title{Load a gtf file from GENCODE as a data frame.}
 \usage{
 load_gtf(input)
 }
@@ -10,10 +10,13 @@ load_gtf(input)
 \item{input}{The name of the downloaded gtf file from GENCODE website}
 }
 \value{
-A dataframe of the gtf file selected
+A data frame of the gtf file selected
 }
 \description{
-This function combines import with loading the gtf file as a dataframe in the R Global Environment
+This function combines import with loading the gtf file as a data frame in the R Global Environment
+}
+\examples{
+load_gtf("gencode.v27.lncRNAs.gtf")
 }
 \seealso{
 \code{\link[rtracklayer]{import}}

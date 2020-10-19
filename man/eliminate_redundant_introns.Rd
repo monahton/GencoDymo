@@ -7,13 +7,16 @@
 eliminate_redundant_introns(input)
 }
 \arguments{
-\item{input}{The name of the dataframe containing all intron coordinates}
+\item{input}{The name of the data frame containing all intron coordinates}
 }
 \value{
-A dataframe with unique introns
+A data frame with unique introns
 }
 \description{
-This function takes a dataframe of intron coordinates and return a dataframe containing non-redundant introns and only one assignment from redundant ones.
+This function takes a data frame of intron coordinates and return a data frame containing non-redundant introns and only one assignment from redundant ones.
+}
+\examples{
+eliminate_redundant_introns(introns_df)
 }
 \seealso{
 \code{\link{eliminate_redundant_exons}}

@@ -12,10 +12,17 @@ extract_minus(input, type)
 \item{type}{A string that specifies the type of element to be reported}
 }
 \value{
-A dataframe of elements on the minus strand
+A data frame of elements on the minus strand
 }
 \description{
-This function takes a gtf file from GENCODE or the dataframe containing extracted introns. It returns as a dataframe a specified element; i.e gene, transcript, exon or intron; that are on the reverse strand
+This function takes a gtf file from GENCODE or the data frame containing extracted introns. It returns as a data frame a specified element; i.e gene, transcript, exon or intron; that are on the reverse strand
+}
+\examples{
+df <- load_gtf("gencode.v27.lncRNAs.gtf")
+extract_minus(df, type = "gene")
+extract_minus(df, type = "transcript")
+extract_minus(df, type = "exon")
+extract_minus(introns_df, type = "intron")
 }
 \seealso{
 \code{\link{extract_plus}}

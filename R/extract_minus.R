@@ -1,22 +1,20 @@
 #' @title Extract elements on the minus strand from a gtf file.
 #'
-#' @description This function takes a gtf file from GENCODE or the dataframe containing extracted introns. It returns as a dataframe a specified element; i.e gene, transcript, exon or intron; that are on the reverse strand
+#' @description This function takes a gtf file from GENCODE or the data frame containing extracted introns. It returns as a data frame a specified element; i.e gene, transcript, exon or intron; that are on the reverse strand
 #' @usage extract_minus(input, type)
 #' @param input The name of the downloaded gtf file from GENCODE website
 #' @param type A string that specifies the type of element to be reported
 #' @export
 #' @keywords negative strand
 #' @seealso \code{\link{extract_plus}}
-#' @return A dataframe of elements on the minus strand
+#' @return A data frame of elements on the minus strand
 #' @examples
-#' examples \dontrun {
-#' # You don't have to run this
 #' df <- load_gtf("gencode.v27.lncRNAs.gtf")
 #' extract_minus(df, type = "gene")
 #' extract_minus(df, type = "transcript")
 #' extract_minus(df, type = "exon")
 #' extract_minus(introns_df, type = "intron")
-#’}
+
 extract_minus <- function(input, type) {
   if (type=="gene") {
     genes <- subset(input, input$type=="gene")
