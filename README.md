@@ -34,6 +34,7 @@ In case of problems in installing or using the package, open an issue or send an
 ## Citation
 
 Please cite the usage of GencoDymo R-package as follows:
+
 Abou Alezz M, Salviati L, Alfieri R, Bione S., GencoDymo: Data Extraction and Manipulation from the GENCODE Database. (2020). R-package version 0.2.1, https://github.com/monahton/GencoDymo, DOI: 10.5281/zenodo.3605995
 
 
