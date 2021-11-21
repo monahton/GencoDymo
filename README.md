@@ -1,12 +1,22 @@
 # GencoDymo
 
+----
+
+<!-- badges start -->
 [![DOI](https://zenodo.org/badge/231610595.svg)](https://zenodo.org/badge/latestdoi/231610595)
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![Build
-Status](https://travis-ci.org/pridiltal/staplr.svg?branch=master)](https://travis-ci.org/pridiltal/staplr)
+[![R build
+status](https://github.com/m-jahn/lattice-tools/workflows/R-CMD-check/badge.svg)](https://github.com/m-jahn/fluctuator/actions)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/monahton)
+![GitHub issues](https://img.shields.io/github/issues/monahton/GencoDymo)
+![GitHub last
+commit](https://img.shields.io/github/last-commit/monahton/GencoDymo)
+![Platform](https://img.shields.io/badge/platform-all-green)
 
 [![Last-changedate](https://img.shields.io/badge/last%20change-2021--11--21-yellowgreen.svg)](/commits/master)
+
+<!-- badges end -->
 
 ## Data Extraction and Manipulation from the GENCODE Database
 
