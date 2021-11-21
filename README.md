@@ -1,5 +1,4 @@
 # GencoDymo
-
 ----
 
 <!-- badges start -->
@@ -17,7 +16,7 @@ commit](https://img.shields.io/github/last-commit/monahton/GencoDymo)
 [![Last-changedate](https://img.shields.io/badge/last%20change-2021--11--21-yellowgreen.svg)](/commits/master)
 
 <!-- badges end -->
-
+----
 ## Data Extraction and Manipulation from the GENCODE Database
 
 ## Introduction
