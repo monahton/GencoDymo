@@ -1,6 +1,16 @@
 # GencoDymo
 
 [![DOI](https://zenodo.org/badge/231610595.svg)](https://zenodo.org/badge/latestdoi/231610595)
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[![Build
+Status](https://travis-ci.org/pridiltal/staplr.svg?branch=master)](https://travis-ci.org/pridiltal/staplr)
+
+-----
+
+[![Last-changedate](https://img.shields.io/badge/last%20change-2020--11--21-yellowgreen.svg)](/commits/master)
+
+-----
 
 ## Data Extraction and Manipulation from the GENCODE Database
 
