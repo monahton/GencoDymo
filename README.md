@@ -6,11 +6,7 @@
 [![Build
 Status](https://travis-ci.org/pridiltal/staplr.svg?branch=master)](https://travis-ci.org/pridiltal/staplr)
 
------
-
 [![Last-changedate](https://img.shields.io/badge/last%20change-2020--11--21-yellowgreen.svg)](/commits/master)
-
------
 
 ## Data Extraction and Manipulation from the GENCODE Database
 
