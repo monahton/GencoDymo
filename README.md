@@ -67,9 +67,9 @@ GencoDymo requires [dplyr](https://dplyr.tidyverse.org/) to be previously instal
 
 **Title**: Data Extraction and Manipulation from the GENCODE Database
 
-**Version**: 0.5.1
+**Version**: 0.6.1
 
-**Date**: 2020-10-20
+**Date**: 2021-11-25
 
 **Author**: Monah Abou Alezz
 
