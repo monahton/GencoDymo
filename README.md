@@ -1,5 +1,4 @@
-# GencoDymo
-----
+# GencoDymo <img src="man/figures/GencoDymo_logo.png" align="right" height="150"/>
 
 <!-- badges start -->
 [![DOI](https://zenodo.org/badge/231610595.svg)](https://zenodo.org/badge/latestdoi/231610595)
