@@ -21,7 +21,6 @@ Imports:
     BSgenome.Hsapiens.UCSC.hg38 (>= 1.4.1),
     plotrix (>= 3.7-6),
     tidyr (>= 1.0.0),
-    seqRFLP (>= 1.0.1),
     utils (>= 2.9.2)
 Depends: dplyr (>= 0.8.3)
 Suggests: knitr, rmarkdown, devtools
