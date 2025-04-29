@@ -1,4 +1,4 @@
-# GencoDymo <img src="man/figures/GencoDymo_hexlogo.png" align="right" height="140"/>
+# GencoDymo
 
 ⚠️⚠️⚠️ **DEPRECATED PACKAGE** ⚠️⚠️⚠️  
 This package is no longer maintained. Please use the updated version:  
